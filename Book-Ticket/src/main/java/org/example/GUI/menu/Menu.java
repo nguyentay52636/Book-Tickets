@@ -35,7 +35,6 @@ public class Menu extends JPanel {
             { "Khách Hàng" },
             { "Nhà Cung Cấp" },
             { "Tài Khoản" },
-
             { "Thống Kê" }
     };
 
@@ -107,10 +106,8 @@ public class Menu extends JPanel {
                 + "border:null");
         JScrollBar vscroll = scroll.getVerticalScrollBar();
         vscroll.setUnitIncrement(10);
+        // Chỉ style màu cho scrollbar để tránh các lỗi liên quan đến insets/width trên JDK 17
         vscroll.putClientProperty(FlatClientProperties.STYLE, ""
-                + "width:$Menu.scroll.width;"
-                + "trackInsets:$Menu.scroll.trackInsets;"
-                + "thumbInsets:$Menu.scroll.thumbInsets;"
                 + "background:$Menu.ScrollBar.background;"
                 + "thumb:$Menu.ScrollBar.thumb");
         createMenu();

@@ -75,11 +75,8 @@ public class MenuItem extends JPanel {
 
     private Icon getIcon() {
         ClassLoader classLoader = getClass().getClassLoader();
-        FlatSVGIcon icon = new FlatSVGIcon("org/example/GUI/menu/icon/" + menuIndex + ".svg", classLoader);
-        FlatSVGIcon.ColorFilter colorFilter = new FlatSVGIcon.ColorFilter();
-        colorFilter.add(Color.decode("#969696"), Color.WHITE, Color.WHITE);
-        icon.setColorFilter(colorFilter);
-        return icon;
+        // Giữ nguyên màu xám gốc trong SVG, tránh filter gây lỗi màu
+        return new FlatSVGIcon("org/example/GUI/menu/icon/" + menuIndex + ".svg", classLoader);
     }
 
     private void init() {
