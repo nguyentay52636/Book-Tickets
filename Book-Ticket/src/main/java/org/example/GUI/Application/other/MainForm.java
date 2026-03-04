@@ -28,7 +28,7 @@ public class MainForm extends JLayeredPane {
     public MainForm() {
         FlatLightLaf.setup();
         init();
-        showForm(new DefaultForm("Trang trống"));
+        showForm(new BeginForm("Welcome!"));
     }
 
     private void init() {
@@ -68,8 +68,19 @@ public class MainForm extends JLayeredPane {
 
     private void initMenuEvent() {
         menu.addMenuEvent((int index, int subIndex, MenuAction action) -> {
-            // Luôn hiển thị cùng một form trống cho mọi menu
-            Application.showForm(new DefaultForm("Trang trống"));
+            switch (index) {
+                case 0 -> showForm(new BeginForm("Đặt vé"));
+                case 1 -> showForm(new DefaultForm("Phòng chiếu"));
+                case 2 -> showForm(new DefaultForm("Sản phẩm"));
+                case 3 -> showForm(new DefaultForm("Suất chiếu"));
+                case 4 -> showForm(new DefaultForm("Vé"));
+                case 5 -> showForm(new DefaultForm("Hóa đơn"));
+                case 6 -> showForm(new DefaultForm("Khách hàng"));
+                case 7 -> showForm(new DefaultForm("Nhân viên"));
+                case 8 -> showForm(new DefaultForm("Thống kê"));
+                case 9 -> Application.logout();
+                default -> action.cancel();
+            }
         });
     }
 

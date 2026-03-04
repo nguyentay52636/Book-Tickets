@@ -4,10 +4,6 @@ import java.util.HashMap;
 
 import com.formdev.flatlaf.util.Animator;
 
-/**
- *
- * @author Raven
- */
 public class MenuAnimation {
 
     private static final HashMap<MenuItem, Animator> hash = new HashMap<>();

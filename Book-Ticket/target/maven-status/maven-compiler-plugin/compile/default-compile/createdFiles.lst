@@ -1,11 +1,15 @@
+org/example/GUI/Components/FormAuth/LoginForm$1.class
+org/example/GUI/Components/FormAuth/LoginForm$4.class
 org/example/GUI/menu/PopupSubmenu.class
 org/example/GUI/Application/Application.class
 org/example/GUI/menu/MenuAnimation.class
 org/example/GUI/menu/MenuAnimation$1.class
 org/example/GUI/Application/other/MainForm$MainFormLayout.class
 org/example/GUI/menu/mode/ToolBarAccentColor.class
+org/example/GUI/Components/FormAuth/LoginForm$2.class
 org/example/UtilsDate/FormattedDatePicker$1.class
 org/example/UtilsDate/FormattedDatePicker.class
+org/example/GUI/Components/FormAuth/LoginForm$3.class
 org/example/GUI/Application/other/MainForm.class
 org/example/UtilsDate/UtilsDateFormat.class
 org/example/GUI/menu/MenuEvent.class
