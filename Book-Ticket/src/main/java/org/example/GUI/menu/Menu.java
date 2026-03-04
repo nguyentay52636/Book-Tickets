@@ -25,17 +25,15 @@ public class Menu extends JPanel {
 
     private final String menuItems[][] = {
 
-            { "Bán Hàng" },
-            { "Nhập Hàng" },
+            { "Đặt vé" },
+            { "Phòng chiếu" },
             { "Sản Phẩm" },
-
-            { "Hoá Đơn" },
-            { "Phiếu Nhập" },
-            { "Nhân Viên" },
-            { "Khách Hàng" },
-            { "Nhà Cung Cấp" },
-            { "Tài Khoản" },
-            { "Thống Kê" }
+            { "Suất chiếu" },
+            { "Vé" },
+            { "Hóa đơn" },
+            { "Khách hàng" },
+            { "Nhân viên" },
+            { "Thống kê" }
     };
 
     public boolean isMenuFull() {
