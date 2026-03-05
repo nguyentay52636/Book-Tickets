@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import org.example.GUI.Application.Application;
+import org.example.GUI.Components.FormBooking.FormBooking;
 import org.example.GUI.Components.FormEmployee.FormEmployee;
 import org.example.GUI.menu.Menu;
 import org.example.GUI.menu.MenuAction;
@@ -70,7 +71,7 @@ public class MainForm extends JLayeredPane {
     private void initMenuEvent() {
         menu.addMenuEvent((int index, int subIndex, MenuAction action) -> {
             switch (index) {
-                case 0 -> showForm(new BeginForm("Đặt vé"));
+                case 0 -> showForm(new FormBooking(0, 0));
                 case 1 -> showForm(new DefaultForm("Phòng chiếu"));
                 case 2 -> showForm(new DefaultForm("Sản phẩm"));
                 case 3 -> showForm(new DefaultForm("Suất chiếu"));
