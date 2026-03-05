@@ -1,10 +1,13 @@
 org/example/BUS/PhimBUS.class
+org/example/GUI/Components/FormProduct/AddPhimDialog.class
 org/example/GUI/Components/FormAuth/LoginForm$1.class
 org/example/GUI/Components/FormAuth/LoginForm$4.class
+org/example/GUI/Components/FormTypeProduct/FormTypeProduct.class
 org/example/GUI/menu/PopupSubmenu.class
 org/example/GUI/Application/Application.class
 org/example/GUI/Components/FormBooking/components/DatVeDialog$1.class
 org/example/GUI/Components/FormBooking/components/ChiTietPhimDialog.class
+org/example/GUI/Components/FormBooking/components/SeatSelectionDialog.class
 org/example/GUI/menu/MenuAnimation.class
 org/example/GUI/menu/MenuAnimation$1.class
 org/example/BUS/EmployeeBUS.class
@@ -13,6 +16,8 @@ org/example/GUI/Components/FormEmployee/FormEmployee$1.class
 org/example/GUI/menu/mode/ToolBarAccentColor.class
 org/example/GUI/Components/FormAuth/LoginForm$2.class
 org/example/UtilsDate/FormattedDatePicker$1.class
+org/example/GUI/Components/FormProduct/EditPhimDialog.class
+org/example/GUI/Components/FormProduct/ChiTietPhimDialog.class
 org/example/DTO/PhimDTO.class
 org/example/UtilsDate/FormattedDatePicker.class
 org/example/BUS/HoaDonBUS.class
@@ -44,6 +49,7 @@ org/example/GUI/menu/MenuItem$MenuLayout.class
 org/example/GUI/Components/FormEmployee/FormEmployee$4.class
 org/example/GUI/Components/FormEmployee/FormEmployee.class
 org/example/GUI/menu/MenuItemLayout.class
+org/example/GUI/Components/FormProduct/FormProduct.class
 org/example/GUI/Components/FormAuth/LoginForm.class
 org/example/GUI/menu/Menu.class
 org/example/DTO/SuatChieuPhimDTO.class

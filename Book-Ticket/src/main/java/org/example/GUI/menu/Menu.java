@@ -28,6 +28,7 @@ public class Menu extends JPanel {
             { "Đặt vé" },
             { "Phòng chiếu" },
             { "Sản Phẩm" },
+            { "Thể Loại Phim" },
             { "Suất chiếu" },
             { "Vé" },
             { "Hóa đơn" },

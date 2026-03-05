@@ -38,6 +38,7 @@ public class DatVeDialog extends JDialog {
     private final int maNV;
     private final int maPhim;
     private int currentMaSuatChieuPhim = -1;
+    private int selectedMaGhe = -1;
 
     public DatVeDialog(int maKH, int maNV, int maPhim) {
         this.maKH = maKH;
@@ -75,10 +76,13 @@ public class DatVeDialog extends JDialog {
         dateSpinner.setFont(textFont);
 
         JButton btnTimGhe = createStyledButton("Tìm ghế trống", new Color(0, 123, 255), Color.WHITE, null);
-        JList<String> listGhe = new JList<>();
-        listGhe.setFont(textFont);
-        JScrollPane scrollGhe = new JScrollPane(listGhe);
-        scrollGhe.setBorder(BorderFactory.createLineBorder(new Color(204, 204, 204)));
+
+        JLabel lblGheDaChon = createStyledLabel("Ghế đã chọn:", labelFont);
+        JTextField txtGheDaChon = new JTextField();
+        txtGheDaChon.setFont(textFont);
+        txtGheDaChon.setEnabled(false);
+        txtGheDaChon.setBackground(new Color(248, 249, 250));
+        txtGheDaChon.setBorder(BorderFactory.createLineBorder(new Color(204, 204, 204)));
 
         JLabel lblGiaVe = createStyledLabel("Giá vé:", labelFont);
         JTextField txtGiaVe = new JTextField();
@@ -97,9 +101,17 @@ public class DatVeDialog extends JDialog {
             currentMaSuatChieuPhim = suatChieuPhimBUS.getMaSuatChieuPhim(
                     maPhim, maPhong, maSuatChieu, ngayChieu);
             if (currentMaSuatChieuPhim != -1) {
-                loadGheTrong(currentMaSuatChieuPhim, listGhe);
                 int giaVeGoc = suatChieuPhimBUS.getGiaVeGoc(currentMaSuatChieuPhim);
                 txtGiaVe.setText(String.valueOf(giaVeGoc));
+
+                SeatSelectionDialog seatDialog = new SeatSelectionDialog(currentMaSuatChieuPhim, veBUS);
+                seatDialog.setVisible(true);
+                int maGheChon = seatDialog.getSelectedMaGhe();
+                if (maGheChon != -1) {
+                    selectedMaGhe = maGheChon;
+                    String seatLabel = seatDialog.getSelectedSeatLabel();
+                    txtGheDaChon.setText(seatLabel != null ? seatLabel : String.valueOf(selectedMaGhe));
+                }
             } else {
                 JOptionPane.showMessageDialog(
                         this,
@@ -117,26 +129,27 @@ public class DatVeDialog extends JDialog {
         panel.add(lblNgayChieu);
         panel.add(dateSpinner);
         panel.add(btnTimGhe);
-        panel.add(scrollGhe);
+        panel.add(new JLabel());          // chừa trống bên cạnh nút
+        panel.add(lblGheDaChon);
+        panel.add(txtGheDaChon);
         panel.add(lblGiaVe);
         panel.add(txtGiaVe);
 
         JButton btnXacNhan = createStyledButton("Xác nhận đặt vé", new Color(40, 167, 69), Color.WHITE, null);
         btnXacNhan.addActionListener(e -> {
-            String selectedGhe = listGhe.getSelectedValue();
-            if (selectedGhe == null) {
-                JOptionPane.showMessageDialog(this, "Chọn ghế", "Lỗi", JOptionPane.ERROR_MESSAGE);
-                return;
-            }
             if (currentMaSuatChieuPhim == -1) {
-                JOptionPane.showMessageDialog(this, "Vui lòng tìm ghế trước khi đặt vé", "Lỗi",
+                JOptionPane.showMessageDialog(this, "Vui lòng chọn suất chiếu và ngày chiếu", "Lỗi",
                         JOptionPane.ERROR_MESSAGE);
                 return;
             }
-            int maGhe = parseMaGheFromString(selectedGhe);
+            if (selectedMaGhe == -1) {
+                JOptionPane.showMessageDialog(this, "Vui lòng bấm 'Tìm ghế trống' và chọn 1 ghế", "Lỗi",
+                        JOptionPane.ERROR_MESSAGE);
+                return;
+            }
             int giaVe = Integer.parseInt(txtGiaVe.getText());
 
-            VeDTO ve = new VeDTO(0, maGhe, currentMaSuatChieuPhim, giaVe, "Đã bán");
+            VeDTO ve = new VeDTO(0, selectedMaGhe, currentMaSuatChieuPhim, giaVe, "Đã bán");
             int maVe = veBUS.add(ve);
 
             HoaDonDTO hoaDon = new HoaDonDTO(
@@ -203,19 +216,5 @@ public class DatVeDialog extends JDialog {
         }
     }
 
-    private void loadGheTrong(int maSuatChieuPhim, JList<String> listGhe) {
-        DefaultListModel<String> model = new DefaultListModel<>();
-        ArrayList<String> gheTrong = veBUS.getGheTrong(maSuatChieuPhim);
-        for (String ghe : gheTrong) {
-            model.addElement(ghe);
-        }
-        listGhe.setModel(model);
-    }
-
-    private int parseMaGheFromString(String gheStr) {
-        return Integer.parseInt(
-                gheStr.split("\\(MaGhe: ")[1].replace(")", "")
-        );
-    }
 }
 
