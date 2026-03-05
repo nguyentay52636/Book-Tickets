@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 import org.example.GUI.Application.Application;
+import org.example.GUI.Components.FormEmployee.FormEmployee;
 import org.example.GUI.menu.Menu;
 import org.example.GUI.menu.MenuAction;
 
@@ -76,7 +77,7 @@ public class MainForm extends JLayeredPane {
                 case 4 -> showForm(new DefaultForm("Vé"));
                 case 5 -> showForm(new DefaultForm("Hóa đơn"));
                 case 6 -> showForm(new DefaultForm("Khách hàng"));
-                case 7 -> showForm(new DefaultForm("Nhân viên"));
+                case 7 -> showForm(new FormEmployee());
                 case 8 -> showForm(new DefaultForm("Thống kê"));
                 case 9 -> Application.logout();
                 default -> action.cancel();
