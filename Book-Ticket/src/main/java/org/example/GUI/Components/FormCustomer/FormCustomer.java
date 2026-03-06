@@ -1,4 +1,4 @@
-package org.example.GUI.Components.FormEmployee;
+package org.example.GUI.Components.FormCustomer;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -9,7 +9,7 @@ import javax.swing.border.TitledBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 
-public class FormEmployee extends JPanel {
+public class FormCustomer extends JPanel {
 
     private static final long serialVersionUID = 1L;
     private JTextField txtTimKiem;
@@ -25,11 +25,11 @@ public class FormEmployee extends JPanel {
     private JButton btnLamMoi;
     private JComboBox<String> cbHienThi;
 
-    public FormEmployee() {
+    public FormCustomer() {
         init();
     }
 
-    public FormEmployee(String title) {
+    public FormCustomer(String title) {
         init();
     }
 
@@ -41,30 +41,30 @@ public class FormEmployee extends JPanel {
         JPanel up = new JPanel();
         up.setLayout(new FlowLayout(FlowLayout.LEFT, 15, 10));
         up.setBackground(new Color(245, 245, 250));
-        up.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(200, 200, 200)), "Quản Lý Nhân Viên", TitledBorder.LEFT, TitledBorder.TOP));
+        up.setBorder(BorderFactory.createTitledBorder(BorderFactory.createLineBorder(new Color(200, 200, 200)), "Quản Lý Khách Hàng", TitledBorder.LEFT, TitledBorder.TOP));
 
         btnView = createStyledButton("Xem", new Color(102, 187, 106), Color.WHITE, "/org/example/GUI/resources/images/view.png");
-        btnView.addActionListener(e -> { /* chỉ giao diện */ });
+        btnView.addActionListener(e -> { });
         up.add(btnView);
 
         btnEdit = createStyledButton("Sửa", new Color(255, 193, 7), Color.WHITE, "/org/example/GUI/resources/images/editing.png");
-        btnEdit.addActionListener(e -> { /* chỉ giao diện */ });
+        btnEdit.addActionListener(e -> { });
         up.add(btnEdit);
 
         btnDelete = createStyledButton("Xóa", new Color(220, 53, 69), Color.WHITE, "/org/example/GUI/resources/images/bin.png");
-        btnDelete.addActionListener(e -> { /* chỉ giao diện */ });
+        btnDelete.addActionListener(e -> { });
         up.add(btnDelete);
 
         btnAdd = createStyledButton("Thêm", new Color(0, 123, 255), Color.WHITE, "/org/example/GUI/resources/images/plus.png");
-        btnAdd.addActionListener(e -> { /* chỉ giao diện */ });
+        btnAdd.addActionListener(e -> {});
         up.add(btnAdd);
 
         btnNhap = createStyledButton("Nhập Excel", new Color(153, 102, 255), Color.WHITE, "/org/example/GUI/resources/images/icons8_ms_excel_30px.png");
-        btnNhap.addActionListener(e -> { /* chỉ giao diện */ });
+        btnNhap.addActionListener(e -> {  });
         up.add(btnNhap);
 
         btnXuat = createStyledButton("Xuất Excel", new Color(153, 102, 255), Color.WHITE, "/org/example/GUI/resources/images/icons8_ms_excel_30px.png");
-        btnXuat.addActionListener(e -> { /* chỉ giao diện */ });
+        btnXuat.addActionListener(e -> {});
         up.add(btnXuat);
 
         JPanel timkiem = new JPanel();
@@ -78,7 +78,7 @@ public class FormEmployee extends JPanel {
         cbHienThi.addActionListener(e -> { /* chỉ giao diện */ });
         timkiem.add(cbHienThi);
 
-        String[] options = { "MaNV", "TenNV", "SDT", "DiaChi" };
+        String[] options = { "MaKH", "TenKH", "SDT", "DiaChi" };
         comboBox = new JComboBox<>(options);
         comboBox.setPreferredSize(new Dimension(100, 40));
         comboBox.setFont(new Font("Segoe UI", Font.PLAIN, 14));
@@ -134,8 +134,8 @@ public class FormEmployee extends JPanel {
         table.setShowGrid(true);
 
         model = new DefaultTableModel();
-        model.addColumn("Mã NV");
-        model.addColumn("Tên NV");
+        model.addColumn("Mã KH");
+        model.addColumn("Tên KH");
         model.addColumn("Ngày sinh");
         model.addColumn("Địa chỉ");
         model.addColumn("SĐT");

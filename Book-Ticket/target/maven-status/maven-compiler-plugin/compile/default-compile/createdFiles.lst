@@ -5,6 +5,7 @@ org/example/GUI/Components/FormAuth/LoginForm$4.class
 org/example/GUI/Components/FormTypeProduct/FormTypeProduct.class
 org/example/GUI/menu/PopupSubmenu.class
 org/example/GUI/Application/Application.class
+org/example/GUI/Components/FormCustomer/FormCustomer$2.class
 org/example/GUI/Components/FormHoaDon/FormHoaDon.class
 org/example/GUI/Components/FormBooking/components/DatVeDialog$1.class
 org/example/GUI/Components/FormBooking/components/ChiTietPhimDialog.class
@@ -40,7 +41,9 @@ org/example/DTO/HoaDonDTO.class
 AccountBUS.class
 org/example/GUI/Components/FormHoaDon/FormHoaDon$1.class
 org/example/GUI/Components/FormEmployee/FormEmployee$2.class
+org/example/GUI/Components/FormCustomer/FormCustomer$1.class
 org/example/GUI/Application/other/DefaultForm.class
+org/example/GUI/Components/FormCustomer/FormCustomer.class
 org/example/DTO/VeDTO.class
 org/example/GUI/menu/MenuItem.class
 org/example/Main.class
@@ -48,7 +51,6 @@ org/example/GUI/Components/FormBooking/components/DatVeDialog.class
 org/example/GUI/menu/mode/LightDarkMode$LightDarkModeLayout.class
 org/example/GUI/menu/mode/ToolBarAccentColor$AccentColorIcon.class
 org/example/GUI/menu/MenuItem$MenuLayout.class
-org/example/GUI/Components/FormEmployee/FormEmployee$4.class
 org/example/GUI/Components/FormEmployee/FormEmployee.class
 org/example/GUI/menu/MenuItemLayout.class
 org/example/GUI/Components/FormProduct/FormProduct.class
@@ -56,5 +58,4 @@ org/example/GUI/Components/FormAuth/LoginForm.class
 org/example/GUI/menu/Menu.class
 org/example/DTO/SuatChieuPhimDTO.class
 org/example/GUI/Application/other/BeginForm.class
-org/example/GUI/Components/FormEmployee/FormEmployee$3.class
 org/example/GUI/menu/mode/LightDarkMode.class
