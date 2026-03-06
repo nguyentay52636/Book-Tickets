@@ -12,6 +12,7 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.ImageIcon;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -43,6 +44,21 @@ public class FormProduct extends JPanel {
         JButton btnEdit = createStyledButton("Sửa");
         JButton btnDelete = createStyledButton("Xóa");
         JButton btnAdd = createStyledButton("Thêm");
+
+        // Icon và màu cho các nút (giống FormTypeProduct)
+        btnAdd.setBackground(new Color(40, 167, 69)); // xanh lá
+        btnAdd.setForeground(Color.WHITE);
+        btnAdd.setIcon(loadImageIcon("/org/example/GUI/resources/images/plus.png"));
+
+        btnView.setBackground(new Color(0, 123, 255)); // xanh dương
+        btnView.setForeground(Color.WHITE);
+        btnView.setIcon(loadImageIcon("/org/example/GUI/resources/images/view.png"));
+
+        btnEdit.setBackground(new Color(255, 193, 7)); // vàng/cam
+        btnEdit.setForeground(Color.BLACK);
+        btnEdit.setIcon(loadImageIcon("/org/example/GUI/resources/images/editing.png"));
+
+        btnDelete.setIcon(loadImageIcon("/org/example/GUI/resources/images/bin.png"));
 
         buttonPanel.add(btnView);
         buttonPanel.add(btnEdit);
@@ -103,6 +119,16 @@ public class FormProduct extends JPanel {
         button.setFocusPainted(false);
         button.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
         return button;
+    }
+
+    private ImageIcon loadImageIcon(String path) {
+        java.net.URL imgURL = getClass().getResource(path);
+        if (imgURL != null) {
+            return new ImageIcon(imgURL);
+        } else {
+            System.err.println("Không thể tải hình ảnh: " + path);
+            return null;
+        }
     }
 
     public void refreshTable() {

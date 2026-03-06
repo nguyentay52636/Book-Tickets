@@ -5,6 +5,7 @@ org/example/GUI/Components/FormAuth/LoginForm$4.class
 org/example/GUI/Components/FormTypeProduct/FormTypeProduct.class
 org/example/GUI/menu/PopupSubmenu.class
 org/example/GUI/Application/Application.class
+org/example/GUI/Components/FormHoaDon/FormHoaDon.class
 org/example/GUI/Components/FormBooking/components/DatVeDialog$1.class
 org/example/GUI/Components/FormBooking/components/ChiTietPhimDialog.class
 org/example/GUI/Components/FormBooking/components/SeatSelectionDialog.class
@@ -37,6 +38,7 @@ org/example/GUI/menu/PopupSubmenu$MenuLayout.class
 org/example/GUI/Components/FormBooking/FormBooking.class
 org/example/DTO/HoaDonDTO.class
 AccountBUS.class
+org/example/GUI/Components/FormHoaDon/FormHoaDon$1.class
 org/example/GUI/Components/FormEmployee/FormEmployee$2.class
 org/example/GUI/Application/other/DefaultForm.class
 org/example/DTO/VeDTO.class
